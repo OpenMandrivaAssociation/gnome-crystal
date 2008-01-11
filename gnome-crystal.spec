@@ -38,14 +38,15 @@ rm -fr $RPM_BUILD_ROOT/var/lib/scrollkeeper
 %find_lang gnome-crystal
 
 # menu
-install -d $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="gcrystal"\
-needs="x11"\
-section="Applications/Sciences/Chemistry"\
-title="GCrystal"\
-icon="%name.png"\
-longtitle="GNOME crystal structure tool"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=gcrystal
+Categories=Science;Chemistry;
+Name=GCrystal
+Icon=%name
+Comment=GNOME crystal structure tool
 EOF
 
 #icons
@@ -81,7 +82,7 @@ update-desktop-database %_datadir/applications > /dev/null
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog COPYING NEWS README
 %_bindir/gcrystal
-%_menudir/%name
+%{_datadir}/applications/mandriva-%name.desktop
 %_sysconfdir/gconf/schemas/gcrystal.schemas
 %_datadir/gnome-2.0/ui/gcrystal.xml
 %_datadir/gnome/help/gnome-crystal
