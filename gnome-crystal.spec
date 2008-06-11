@@ -63,13 +63,13 @@ rm -rf $RPM_BUILD_ROOT
 %post
 %post_install_gconf_schemas sound-juicer
 %{update_menus}
-if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q; fi
+%update_scrollkeeper
 update-mime-database %_datadir/mime > /dev/null
 update-desktop-database %_datadir/applications > /dev/null
 
 %preun
 %preun_uninstall_gconf_schemas sound-juicer
-if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q; fi
+%update_scrollkeeper
 update-mime-database %_datadir/mime > /dev/null
 update-desktop-database %_datadir/applications > /dev/null
 
