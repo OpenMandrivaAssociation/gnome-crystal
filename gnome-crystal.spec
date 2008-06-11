@@ -68,9 +68,7 @@ update-mime-database %_datadir/mime > /dev/null
 update-desktop-database %_datadir/applications > /dev/null
 
 %preun
-if [ "$1" = "0" ] ; then
-GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` gconftool-2 --makefile-uninstall-rule %{_sysconfdir}/gconf/schemas/sound-juicer.schemas > /dev/null
-fi
+%preun_uninstall_gconf_schemas sound-juicer
 if [ -x %{_bindir}/scrollkeeper-update ]; then %{_bindir}/scrollkeeper-update -q; fi
 update-mime-database %_datadir/mime > /dev/null
 update-desktop-database %_datadir/applications > /dev/null
