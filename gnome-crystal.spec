@@ -61,9 +61,11 @@ convert -size 16x16 gcrystal32.png $RPM_BUILD_ROOT/%_miconsdir/%name.png
 rm -rf $RPM_BUILD_ROOT
 
 %post
+%if %mdkversion < 200900
 %post_install_gconf_schemas sound-juicer
 %{update_menus}
 %update_scrollkeeper
+%endif
 update-mime-database %_datadir/mime > /dev/null
 update-desktop-database %_datadir/applications > /dev/null
 
@@ -72,9 +74,11 @@ update-desktop-database %_datadir/applications > /dev/null
 update-mime-database %_datadir/mime > /dev/null
 update-desktop-database %_datadir/applications > /dev/null
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
 %clean_scrollkeeper
+%endif
 
 %files -f gnome-crystal.lang
 %defattr(-,root,root)
