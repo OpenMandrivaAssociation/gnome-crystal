@@ -69,12 +69,12 @@ update-desktop-database %_datadir/applications > /dev/null
 
 %preun
 %preun_uninstall_gconf_schemas sound-juicer
-%update_scrollkeeper
 update-mime-database %_datadir/mime > /dev/null
 update-desktop-database %_datadir/applications > /dev/null
 
 %postun
 %clean_menus
+%clean_scrollkeeper
 
 %files -f gnome-crystal.lang
 %defattr(-,root,root)
