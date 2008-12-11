@@ -13,7 +13,7 @@ License: 	GPL
 Group: 		Sciences/Chemistry
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	gcu-devel libglade2.0-devel libgnomeprintui-devel libgnomeui2-devel
-BuildRequires:	jpeg-devel gettext pkgconfig png-devel ImageMagick
+BuildRequires:	jpeg-devel gettext pkgconfig png-devel imagemagick
 Requires(post):	scrollkeeper GConf2 shared-mime-info desktop-file-utils
 Requires(preun): scrollkeeper GConf2 shared-mime-info desktop-file-utils
 Provides:	gcrystal
