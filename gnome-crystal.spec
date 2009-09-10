@@ -1,6 +1,6 @@
 %define name 	gnome-crystal
 %define version 0.6.5
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: 	GNOME crystal structure visualization
 Name: 		%{name}
