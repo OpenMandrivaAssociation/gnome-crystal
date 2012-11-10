@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2005-08-13 22:59:21.000000000 +0200
++++ Makefile.in	2005-08-13 22:59:55.000000000 +0200
+@@ -897,8 +897,8 @@
+ @GNOME24_SUPPORT_FALSE@		$(INSTALL_DATA) $(top_srcdir)/gcrystal$$i.png \
+ @GNOME24_SUPPORT_FALSE@			$(DESTDIR)$(datadir)/icons/hicolor/$$i"x"$$i/apps/gcrystal.png; \
+ @GNOME24_SUPPORT_FALSE@	done
+-@UPDATE_DATABASES_TRUE@	update-mime-database $(datadir)/mime
+-@UPDATE_DATABASES_TRUE@@WITH_UPDATE_DESKTOP_TRUE@	update-desktop-database $(datadir)/applications
++#@UPDATE_DATABASES_TRUE@	update-mime-database $(datadir)/mime
++#@UPDATE_DATABASES_TRUE@@WITH_UPDATE_DESKTOP_TRUE@	update-desktop-database $(datadir)/applications
+ 
+ uninstall-hook:
+ @GNOME24_SUPPORT_TRUE@	rm  $(DESTDIR)$(datadir)/pixmaps/gcrystal.png
