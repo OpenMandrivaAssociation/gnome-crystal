@@ -8,7 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 Source0: 	%{name}-%{version}.tar.bz2
 Patch0:		gnome-crystal-0.6.5-hooks.patch
-URL: 		http://www.nongnu.org/gcrystal/
+URL: 		https://www.nongnu.org/gcrystal/
 License: 	GPL
 Group: 		Sciences/Chemistry
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
