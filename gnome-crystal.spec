@@ -12,6 +12,11 @@ URL: 		https://www.nongnu.org/gcrystal/
 License: 	GPL
 Group: 		Sciences/Chemistry
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gcu-devel libglade2.0-devel libgnomeprintui-devel libgnomeui2-devel
 BuildRequires:	jpeg-devel gettext pkgconfig png-devel imagemagick
 Requires(post):	scrollkeeper GConf2 shared-mime-info desktop-file-utils
